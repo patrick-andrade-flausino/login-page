@@ -2,15 +2,23 @@
   <section class="form-section">
     <img src="/assets/svg/logo.svg" alt="imagem da logo moveIt" />
     <h2>{{ title }}</h2>
-    <ng-content select="selector"></ng-content>
+    <ng-content></ng-content>
     <div class="btn-wrapper">
-      <button class="btnPrimary">{{ primaryBtnText }}</button>
+      <button
+        class="btnPrimary"
+        (click)="submit()"
+        [disabled]="disablePrimaryBtn"
+      >
+        {{ primaryBtnText }}
+      </button>
       <div class="divider">
         <div></div>
         <span>or</span>
         <div></div>
       </div>
-      <button class="btnSecondary">{{ secondaryBtnText }}</button>
+      <button class="btnSecondary" (click)="navigate()">
+        {{ secondaryBtnText }}
+      </button>
     </div>
   </section>
   <section class="main-section">
